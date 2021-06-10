@@ -20,4 +20,10 @@ export const Container = styled.div`
     filter: brightness(1.1);
   }
 
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 `;

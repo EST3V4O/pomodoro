@@ -1,10 +1,21 @@
 import React from 'react';
+import Countdown from '../../components/Countdown';
 
-// import { Container } from './styles';
+
+import Header from '../../components/Header';
+import Status from '../../components/Status';
+
+import { Container, Main } from './styles';
 
 function Timer() {
     return (
-        <h1>Timer</h1>
+        <Container>
+            <Header />
+            <Main>
+                <Countdown />
+                <Status status='Trabalho'/>
+            </Main>
+        </Container>
     )
 }
 

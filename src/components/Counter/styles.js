@@ -58,7 +58,6 @@ export const Count = styled.div`
     font-weight: bold;
     padding-top: 0.8rem;
     padding-bottom: 0.4rem;
-
 `
 
 export const Title = styled.h3`

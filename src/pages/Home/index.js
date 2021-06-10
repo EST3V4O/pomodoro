@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container } from './styles';
 import Counter from '../../components/Counter'
-import Button from '../../components/Button';
+import Link from '../../components/Link';
 
 function Home() {
     return (
@@ -14,7 +14,7 @@ function Home() {
                 <Counter title='Sessões'/>
             </section>
             <section>
-                <Button link='Continuar' path='/timer'/>
+                <Link link='Continuar' path='/timer'/>
             </section>
         </Container>
     )
