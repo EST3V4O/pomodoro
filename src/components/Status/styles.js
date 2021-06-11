@@ -9,7 +9,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-around;
 
-  color: ${props => props.countdown || props.first ? 'var(--green)' : 'var(--yellow)'};
+  color: ${props => (!props.active && props.working) || (!props.timeBreak) ? 'var(--green)' : 'var(--yellow)'};
 
   h2 {
     font-size: 3rem;

@@ -3,14 +3,17 @@ import React, { createContext, useState } from 'react';
 export const CountdownContext = createContext({})
 
 function CountdownProvider({ children }) {
-    const [active, setActive] = useState(false)
-    const [first, setFirst] = useState(true)
+    const [config, setConfig] = useState({
+        active: false,
+        timeBreak: false,
+        working: true,
+        finished: false,
+    })
 
     return (
         <CountdownContext.Provider value={
             {
-                active, setActive,
-                first, setFirst
+                config, setConfig
             }
         }>
             {children}

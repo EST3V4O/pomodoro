@@ -1,36 +1,46 @@
-import React, { useReducer } from 'react';
+import React, { useContext } from 'react';
 
 import { Container } from './styles';
 import { MdPause } from 'react-icons/md'
+import { CountdownContext } from '../../contexts/CountdownContext';
 
-function Button({ icon, active, setActive, first, setFirst }) {
-    function reducer(state, action) {
-        const activeAble = true
+function Button({ icon }) {
+    const { config, setConfig } = useContext(CountdownContext)
 
-        switch(action.type) {
-            case 'first':
-                return {
-                    active: setActive(!active || activeAble),
-                    first: setFirst(false)
-                }
-            case 'active':
-                return {
-                    active: setActive(!active)
-                }
-            default:
-                return state
-        }
+    const { active, working, timeBreak } = config
+
+    function handleStartCountdown() {
+        setConfig({
+            ...config,
+            active: !active,
+            working: true,
+            timeBreak: false,
+            finished: false,
+        })
     }
 
-    const [state, dispatch] = useReducer(reducer, { active, first })
+    function handleStartBreak() {
+        setConfig({
+            ...config,
+            active: !active,
+        })
+    }
 
     return (
         <Container>
             {
-                first ? (
-                    <button onClick={() => dispatch({ type: 'first' })} >{icon}</button>
+                working ? (
+                    working && !active ? (
+                        <button onClick={handleStartCountdown} >{icon}</button>
+                    ) : (
+                        <button onClick={handleStartCountdown} ><MdPause /></button>
+                    )
                 ) : (
-                    <button onClick={() => dispatch({ type: 'active' })} ><MdPause /></button>
+                    timeBreak && !active ? (
+                        <button onClick={handleStartBreak} >{icon} </button>
+                    ) : (
+                        <button onClick={handleStartBreak} ><MdPause /> </button>
+                    )
                 )
             }
         </Container>

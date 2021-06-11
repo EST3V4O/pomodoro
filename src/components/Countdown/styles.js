@@ -15,12 +15,14 @@ export const Container = styled.div`
 
     svg circle {
         fill: transparent;
-        stroke: var(--green);
+        stroke: ${props => props.color};
         stroke-width: 7px;
         stroke-linecap: round;
         stroke-dasharray: 800;
-        stroke-dashoffset: 800;
-        animation: animate 8s linear infinite;
+        stroke-dashoffset: 0;
+        animation: animate ${props => {
+            return (props.active && props.working) || (props.active && props.timeBreak) ? `${props.totalTime}s` : 0
+        }} linear infinite;
     }
 
     div {
@@ -39,6 +41,10 @@ export const Container = styled.div`
     }
 
     @keyframes animate {
+        0% {
+            stroke-dashoffset: 800;
+        }
+
         100% {
             stroke-dashoffset: 0;
         }

@@ -6,7 +6,6 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2rem;
 
   font-size: 1.5rem;
   font-weight: bold;
@@ -24,5 +23,8 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
   }
 `;

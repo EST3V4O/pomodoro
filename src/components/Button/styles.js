@@ -6,7 +6,6 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 2rem;
 
     border-radius: 0.5rem;
     transition: filter 0.5s ease;
@@ -18,7 +17,9 @@ export const Container = styled.div`
     }
 
     button {
+      border-radius: 0.5rem;
       background: none;
+      padding: 1rem 2rem;
       border: none;
       font-size: 1.5rem;
       font-weight: bold;
