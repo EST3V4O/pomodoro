@@ -9,7 +9,7 @@ function Routes() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact='/' path='/'>
+                <Route exact={true} path="/">
                     <Home />
                 </Route>
                 <Route path='/timer'>

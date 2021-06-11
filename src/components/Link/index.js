@@ -3,10 +3,10 @@ import { Link as LinkRouter } from 'react-router-dom'
 
 import { Container } from './styles';
 
-function Link({ link, path, icon }) {
+function Link({ link, path}) {
     return (
         <Container>
-            <LinkRouter to={path}>{link || icon }</LinkRouter>
+            <LinkRouter to={path}>{link}</LinkRouter>
         </Container>
     )
 }
